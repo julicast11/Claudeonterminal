@@ -340,8 +340,8 @@ const ALL_STEPS = [
     ],
     osSpecific: null, subSections: null,
     command: 'claude --version',
-    hasCopyBtn: false, links: [],
-    tip: null,
+    hasCopyBtn: true, links: [],
+    tip: 'If the command is not found, close your terminal completely and open a new one — then try again.',
     warn: null
   },
 
@@ -368,7 +368,7 @@ const ALL_STEPS = [
     id: 14,
     title: 'Connect Google Drive and GitHub',
     shortTitle: 'Connect integrations',
-    os: 'both', windowsOnly: false, required: false, optional: false,
+    os: 'both', windowsOnly: false, required: false, optional: true,
     explanation: 'Link your accounts so Claude can read from your Drive and interact with your GitHub repositories.',
     bullets: [
       'In Claude Desktop, go to <strong>Settings → Integrations</strong>',
@@ -391,35 +391,43 @@ const ALL_STEPS = [
     title: 'Enable desktop-commander MCP server',
     shortTitle: 'desktop-commander',
     os: 'both', windowsOnly: false, required: false, optional: true,
-    explanation: 'desktop-commander is an <span data-tooltip="MCP (Model Context Protocol) servers extend Claude\'s capabilities by connecting it to external tools and services">MCP server</span> that gives Claude Desktop the ability to run terminal commands, manage files, and control your desktop. It is installed via npm and configured in Claude Desktop\'s settings.',
+    explanation: 'desktop-commander is an <span data-tooltip="MCP (Model Context Protocol) servers extend Claude\'s capabilities by connecting it to external tools and services">MCP server</span> that gives Claude Desktop the ability to run terminal commands, manage files, and control your desktop. It connects Claude Desktop to your local system so it can execute commands on your behalf.',
     bullets: [
-      'First, install the package globally by running the command below in your terminal',
-      'Then open Claude Desktop and go to <strong>Settings → Developer → Edit Config</strong>',
-      'Add the desktop-commander server to your <code>claude_desktop_config.json</code> (see config below)',
-      'Save the file and <strong>restart Claude Desktop</strong>'
+      'Follow the two steps below in order',
+      'You will need your terminal open and Claude Desktop installed'
     ],
     osSpecific: null,
     subSections: [
       {
         heading: '1. Install via terminal',
         bullets: [
-          'Run: <code>npm install -g @anthropic-ai/desktop-commander</code>',
-          'This installs the MCP server globally on your system'
+          'Run: <code>npx @anthropic-ai/desktop-commander setup</code>',
+          'This installs and configures the MCP server automatically',
+          'If prompted to install a package, type <strong>y</strong> and press Enter'
         ]
       },
       {
-        heading: '2. Add to Claude Desktop config',
+        heading: '2. Restart Claude Desktop',
         bullets: [
-          'Open Claude Desktop → <strong>Settings → Developer → Edit Config</strong>',
-          'Add <code>"desktop-commander"</code> to the <code>mcpServers</code> section',
-          'The config file is located at:<br><code>~/Library/Application Support/Claude/claude_desktop_config.json</code> (Mac)<br><code>%APPDATA%\\Claude\\claude_desktop_config.json</code> (Windows)',
-          'Restart Claude Desktop after saving'
+          'Fully quit Claude Desktop (not just close the window)',
+          'On Mac: click <strong>Claude</strong> in the menu bar → <strong>Quit Claude</strong>',
+          'On Windows: right-click the Claude icon in the system tray → <strong>Quit</strong>',
+          'Re-open Claude Desktop'
+        ]
+      },
+      {
+        heading: '3. Verify it works',
+        bullets: [
+          'Open a new conversation in Claude Desktop',
+          'You should see a <strong>hammer icon 🔨</strong> or <strong>tools icon</strong> indicating MCP servers are connected',
+          'Try asking: <em>"List the files in my home directory"</em>',
+          'If Claude can list your files, desktop-commander is working'
         ]
       }
     ],
-    command: 'npm install -g @anthropic-ai/desktop-commander',
+    command: 'npx @anthropic-ai/desktop-commander setup',
     hasCopyBtn: true, links: [],
-    tip: 'After restarting Claude Desktop, try asking Claude to "list the files in my home directory" to confirm desktop-commander is working.',
+    tip: 'If the setup command doesn\'t work, you can also install manually: run <code>npm install -g @anthropic-ai/desktop-commander</code>, then open Claude Desktop → Settings → Developer → Edit Config, and add the server to your config file.',
     warn: null
   }
 
