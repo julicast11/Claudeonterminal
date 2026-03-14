@@ -239,119 +239,58 @@ const ALL_STEPS = [
     warn: null
   },
 
-  /* ── 9 ─────────────────────────────────────────────────────── */
-  {
-    id: 9,
-    title: 'Install Git',
-    shortTitle: 'Install Git',
-    os: 'windows', windowsOnly: true, required: false, optional: false,
-    explanation: 'Git is required for version control on Windows. macOS users can skip this — Git comes pre-installed with Xcode Command Line Tools.',
-    bullets: [
-      'Go to <strong><a href="https://git-scm.com/download/win" target="_blank">git-scm.com/download/win</a></strong> to download Git',
-      'Download the latest <strong>Git for Windows</strong> installer',
-      'Run the installer — the default settings are recommended',
-      'Open your terminal and run <code>git --version</code> to confirm it installed correctly'
-    ],
-    osSpecific: null, subSections: null, command: null, hasCopyBtn: false,
-    links: [{ text: 'git-scm.com/download/win ↗', url: 'https://git-scm.com/download/win' }],
-    tip: null,
-    warn: 'If you see this on Mac, check that you selected the correct OS above.'
-  },
-
-  /* ── 10 ────────────────────────────────────────────────────── */
+  /* ── 9 ── Mac: Open Terminal ──────────────────────────────── */
   {
     id: 10,
-    title: 'Set up the terminal',
-    shortTitle: 'Set up terminal',
-    os: 'both', windowsOnly: false, required: false, optional: false,
-    explanation: 'Open and configure your terminal — you\'ll need it for the install command in the next step.',
-    bullets: [],
-    osSpecific: {
-      mac: {
-        heading: 'On Mac',
-        bullets: [
-          'Press <kbd>Cmd+Space</kbd> to open <span data-tooltip="macOS built-in search tool — press Cmd+Space to open it">Spotlight</span>',
-          'Type <strong>Terminal</strong> and press <kbd>Enter</kbd>',
-          'Verify curl: run <code>curl --version</code>'
-        ]
-      },
-      windows: {
-        heading: 'On Windows',
-        bullets: [
-          'Press the <strong>Windows key</strong> → search <strong>Windows Terminal</strong> or <strong>PowerShell</strong>',
-          'Right-click → <em>"Run as administrator"</em> if you hit permission errors',
-          'Verify <span data-tooltip="curl is a command-line tool for transferring data via URLs">curl</span>: run <code>curl --version</code>',
-          '<strong>Git Bash</strong> also works if you installed Git in the previous step'
-        ]
-      }
-    },
-    subSections: null, command: null, hasCopyBtn: false, links: [],
+    title: 'Open Terminal',
+    shortTitle: 'Open Terminal',
+    os: 'mac', windowsOnly: false, required: false, optional: false,
+    explanation: 'Open the Terminal app — you\'ll use it to install and run Claude Code.',
+    bullets: [
+      'Press <kbd>Cmd+Space</kbd> to open <span data-tooltip="macOS built-in search tool — press Cmd+Space to open it">Spotlight</span>',
+      'Type <strong>Terminal</strong> and press <kbd>Enter</kbd>',
+      'A command-line window will appear — keep it open for the next step'
+    ],
+    osSpecific: null, subSections: null, command: null, hasCopyBtn: false, links: [],
     tip: 'Keep your terminal open — you\'ll use it in the next step.',
     warn: null
   },
 
-  /* ── 11 ────────────────────────────────────────────────────── */
+  /* ── 10 ── Mac: Install Claude Code ─────────────────────── */
   {
     id: 11,
     title: 'Install Claude Code',
     shortTitle: 'Install Claude Code',
-    os: 'both', windowsOnly: false, required: false, optional: false,
+    os: 'mac', windowsOnly: false, required: false, optional: false,
     explanation: 'Install Claude Code using the official native installer. This is the recommended method — it auto-updates automatically.',
-    bullets: [],
-    showBothOS: false,
-    osSpecific: {
-      mac: {
-        heading: 'On Mac (recommended — native install, auto-updates)',
-        bullets: [
-          'Copy the install command below',
-          'Open <strong>Terminal</strong> — press <kbd>⌘ Space</kbd>, type <strong>Terminal</strong>, press <kbd>Enter</kbd>',
-          'Paste with <kbd>⌘ V</kbd> and press <kbd>Enter</kbd>',
-          'The installer handles everything — no dependencies needed'
-        ],
-        command: 'curl -fsSL https://claude.ai/install.sh | bash'
-      },
-      windows: {
-        heading: 'On Windows',
-        bullets: [
-          'Open <strong>PowerShell</strong> — press <kbd>Win</kbd>, type <strong>PowerShell</strong>, press <kbd>Enter</kbd>',
-          'Paste the command below and press <kbd>Enter</kbd>',
-          'That\'s it! This installs Claude Code and sets it up to auto-update automatically'
-        ],
-        command: 'irm https://claude.ai/install.ps1 | iex'
-      }
-    },
-    subSections: [
-      {
-        heading: '🔄 Alternative install methods (do NOT auto-update)',
-        bullets: [
-          '<strong>Homebrew (Mac/Linux):</strong> <code>brew install --cask claude-code</code> — run <code>brew upgrade claude-code</code> periodically to update',
-          '<strong>WinGet (Windows):</strong> <code>winget install Anthropic.ClaudeCode</code> — run <code>winget upgrade Anthropic.ClaudeCode</code> periodically to update',
-          '<strong>npm (fallback):</strong> <code>npm install -g @anthropic-ai/claude-code</code> — requires Node.js v18+'
-        ]
-      }
+    bullets: [
+      'In your Terminal, paste the command below and press <kbd>Enter</kbd>',
+      'The installer handles everything — no dependencies needed'
     ],
-    command: null, hasCopyBtn: false, links: [],
-    tip: 'The native installer is recommended because it auto-updates. Homebrew, WinGet, and npm installs require manual updates.',
+    osSpecific: null, subSections: null,
+    command: 'curl -fsSL https://claude.ai/install.sh | bash',
+    hasCopyBtn: true, links: [],
+    tip: null,
     warn: null
   },
 
-  /* ── 12 ────────────────────────────────────────────────────── */
+  /* ── 11 ── Mac: Verify installation ─────────────────────── */
   {
     id: 12,
     title: 'Verify installation',
     shortTitle: 'Verify installation',
-    os: 'both', windowsOnly: false, required: false, optional: false,
+    os: 'mac', windowsOnly: false, required: false, optional: false,
     explanation: 'Confirm Claude Code was installed correctly by checking the version in a fresh terminal window.',
     bullets: [
-      'Open a <strong>new terminal window</strong> (this ensures your <span data-tooltip="PATH is a list of directories your system searches when you run a command">PATH</span> is updated)',
+      'Open a <strong>new Terminal window</strong> (<kbd>Cmd+N</kbd>) — this ensures your system recognizes the new install',
       'Run <code>claude --version</code>',
       'You should see a version number, e.g. <code>claude 1.x.x</code>',
-      'If not found, restart your terminal and try again'
+      'If not found, close Terminal completely and reopen it, then try again'
     ],
     osSpecific: null, subSections: null,
     command: 'claude --version',
     hasCopyBtn: true, links: [],
-    tip: 'If the command is not found, close your terminal completely and open a new one — then try again.',
+    tip: null,
     warn: null
   },
 
