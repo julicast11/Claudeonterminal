@@ -112,19 +112,38 @@ const ALL_STEPS = [
   /* ── 4 ─────────────────────────────────────────────────────── */
   {
     id: 4,
-    title: 'Turn off Auto-reload and Extra Usage',
-    shortTitle: 'Auto-reload & Extra Usage',
+    title: 'Turn off Extra Usage',
+    shortTitle: 'Turn off Extra Usage',
     os: 'both', windowsOnly: false, required: false, optional: false,
-    explanation: 'Disable Auto-reload and Extra Usage to prevent unexpected charges and unwanted app behaviour.',
-    bullets: [
-      'Click the <strong>gear icon ⚙</strong> or open the app <strong>Settings</strong>',
-      'Find <strong>Auto-reload</strong> and switch it <strong>off</strong>',
-      'Find <strong>Extra Usage</strong> and switch it <strong>off</strong>',
-      'Save or close the settings panel'
+    explanation: 'Disable Extra Usage to prevent unexpected overage charges beyond your plan\'s included usage.',
+    bullets: [],
+    osSpecific: null,
+    subSections: [
+      {
+        heading: '1. Open Settings',
+        bullets: [
+          'In Claude Desktop, click your <strong>profile icon</strong> (bottom-left corner)',
+          'Select <strong>Settings</strong> from the menu'
+        ]
+      },
+      {
+        heading: '2. Go to Usage',
+        bullets: [
+          'In the Settings sidebar, click <strong>Usage</strong>'
+        ]
+      },
+      {
+        heading: '3. Turn off Extra Usage',
+        bullets: [
+          'Find <strong>"Extra Usage"</strong> (also called "Allow extra usage")',
+          'Toggle it <strong>off</strong> — this prevents overage charges beyond your plan\'s included usage',
+          'Close the Settings panel when done'
+        ]
+      }
     ],
-    osSpecific: null, subSections: null, command: null, hasCopyBtn: false, links: [],
+    command: null, hasCopyBtn: false, links: [],
     tip: null,
-    warn: 'Leaving Extra Usage on may trigger additional billing if your usage spikes.'
+    warn: 'Leaving Extra Usage on may trigger additional billing if your usage spikes beyond your plan limits.'
   },
 
   /* ── 5 ─────────────────────────────────────────────────────── */
