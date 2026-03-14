@@ -212,7 +212,7 @@ const ALL_STEPS = [
       'Go to <strong><a href="https://git-scm.com/download/win" target="_blank">git-scm.com/download/win</a></strong> to download Git',
       'Download the latest <strong>Git for Windows</strong> installer',
       'Run the installer — the default settings are recommended',
-      'Open <strong>Git Bash</strong> or PowerShell and run <code>git --version</code> to confirm'
+      'Open your terminal and run <code>git --version</code> to confirm it installed correctly'
     ],
     osSpecific: null, subSections: null, command: null, hasCopyBtn: false,
     links: [{ text: 'git-scm.com/download/win ↗', url: 'https://git-scm.com/download/win' }],
