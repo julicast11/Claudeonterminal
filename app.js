@@ -370,7 +370,7 @@ const ALL_STEPS = [
       {
         heading: '1. Install via terminal',
         bullets: [
-          'Run: <code>npx @wonderwhy-er/desktop-commander setup</code>',
+          'Run: <code>npx @wonderwhy-er/desktop-commander@latest setup</code>',
           'This installs and configures the MCP server automatically',
           'If prompted to install a package, type <strong>y</strong> and press Enter'
         ]
@@ -394,7 +394,7 @@ const ALL_STEPS = [
         ]
       }
     ],
-    command: 'npx @wonderwhy-er/desktop-commander setup',
+    command: 'npx @wonderwhy-er/desktop-commander@latest setup',
     hasCopyBtn: true, links: [],
     tip: 'If the setup command doesn\'t work, you can also install manually: run <code>npm install -g @wonderwhy-er/desktop-commander</code>, then open Claude Desktop → Settings → Developer → Edit Config, and add the server to your config file.',
     warn: null
