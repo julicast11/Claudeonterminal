@@ -186,18 +186,56 @@ const ALL_STEPS = [
   /* ── 7 ─────────────────────────────────────────────────────── */
   {
     id: 8,
-    title: 'Open the Code tab',
-    shortTitle: 'Open Code tab',
-    os: 'both', windowsOnly: false, required: false, optional: false,
-    explanation: 'Claude Desktop includes a dedicated Code tab optimised for software development — better syntax awareness and file context.',
-    bullets: [
-      'At the top of Claude Desktop, you\'ll see three tabs: <strong>Chat</strong>, <strong>Cowork</strong>, and <strong>Code</strong>',
-      'Click the <strong>Code</strong> tab to switch to the developer-focused interface',
-      'Explore the code-specific options and settings here',
-      'This is where you\'ll spend most of your development time with Claude'
+    title: 'Windows Setup Guide',
+    shortTitle: 'Windows Setup',
+    os: 'windows', windowsOnly: true, required: false, optional: false,
+    explanation: 'Getting Claude Code running on Windows takes about 10 minutes. You\'ll install three things: Git, Node.js, and Claude Code. Follow each step in order.',
+    bullets: [],
+    osSpecific: null,
+    subSections: [
+      {
+        heading: '1. Install Git',
+        bullets: [
+          'Go to <strong><a href="https://git-scm.com/download/win" target="_blank">git-scm.com/download/win</a></strong>',
+          'Click <strong>"Git for Windows x64 Setup"</strong> to download',
+          'Open the downloaded file and click through the installer — all default settings are fine',
+          'On the <strong>"Adjusting your PATH environment"</strong> screen, make sure <strong>"Git from the command line and also from 3rd-party software"</strong> is selected',
+          'Keep clicking <strong>Next → Install → Finish</strong>'
+        ]
+      },
+      {
+        heading: '2. Install Node.js',
+        bullets: [
+          'Go to <strong><a href="https://nodejs.org" target="_blank">nodejs.org</a></strong>',
+          'Click <strong>"Windows Installer (.msi)"</strong> under the LTS version',
+          'Open the downloaded file and click through the installer — all default settings are fine',
+          'Click <strong>Finish</strong> when done'
+        ]
+      },
+      {
+        heading: '3. Verify Everything Installed',
+        bullets: [
+          '<strong>Close any open PowerShell or Terminal windows</strong> — this is important, old windows won\'t recognize the new installs',
+          'Open a <strong>new PowerShell</strong> (search "PowerShell" in the Start menu)',
+          'Type these one at a time and hit Enter: <code>git --version</code> and <code>node --version</code>',
+          'Both should show version numbers. If they do, you\'re ready!'
+        ]
+      },
+      {
+        heading: '4. Install Claude Code',
+        bullets: [
+          'In that same PowerShell window, run: <code>npm install -g @anthropic-ai/claude-code</code>',
+          'Wait for it to finish, then run: <code>claude</code>',
+          'It will ask you to log in with your Anthropic account — follow the prompts and you\'re in!'
+        ]
+      }
     ],
-    osSpecific: null, subSections: null, command: null, hasCopyBtn: false, links: [],
-    tip: 'The Code tab provides improved syntax highlighting and better file context handling.',
+    command: null, hasCopyBtn: false,
+    links: [
+      { text: 'git-scm.com/download/win ↗', url: 'https://git-scm.com/download/win' },
+      { text: 'nodejs.org ↗', url: 'https://nodejs.org' }
+    ],
+    tip: null,
     warn: null
   },
 
