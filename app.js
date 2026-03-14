@@ -154,7 +154,7 @@ const ALL_STEPS = [
     os: 'both', windowsOnly: false, required: false, optional: false,
     explanation: 'Opt out of contributing your conversations to model training to keep your code and data private.',
     bullets: [
-      'Go to <strong>Settings → Privacy</strong>',
+      'Still in Settings, click <strong>Privacy</strong> in the sidebar',
       'Find <em>"Improve Claude for everyone"</em> or <em>"Share usage data"</em>',
       'Toggle it <strong>off</strong>',
       'Your prompts and code won\'t be used to train future models'
@@ -172,7 +172,7 @@ const ALL_STEPS = [
     os: 'both', windowsOnly: false, required: false, optional: false,
     explanation: 'Enable Memory so Claude can remember your preferences, stack, and context across separate conversations.',
     bullets: [
-      'Go to <strong>Settings → Capabilities</strong>',
+      'Still in Settings, click <strong>Capabilities</strong> in the sidebar',
       'Click on <strong>Memory</strong> to expand it',
       'Toggle on <strong>"Search and reference chat"</strong>',
       'Toggle on <strong>"Generate from chat history"</strong>',
