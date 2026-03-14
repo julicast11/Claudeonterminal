@@ -370,18 +370,18 @@ const ALL_STEPS = [
       {
         heading: '1. Install via terminal',
         bullets: [
-          'Run: <code>npx @anthropic-ai/desktop-commander setup</code>',
+          'Run: <code>npx @wonderwhy-er/desktop-commander setup</code>',
           'This installs and configures the MCP server automatically',
           'If prompted to install a package, type <strong>y</strong> and press Enter'
         ]
       },
       {
-        heading: '2. Restart Claude Desktop',
+        heading: '2. Claude Desktop restarts automatically',
         bullets: [
-          'Fully quit Claude Desktop (not just close the window)',
-          'On Mac: click <strong>Claude</strong> in the menu bar → <strong>Quit Claude</strong>',
-          'On Windows: right-click the Claude icon in the system tray → <strong>Quit</strong>',
-          'Re-open Claude Desktop'
+          'The installer will restart Claude Desktop for you automatically',
+          'If it doesn\'t restart on its own, fully quit Claude Desktop and reopen it',
+          'On Mac: click <strong>Claude</strong> in the menu bar → <strong>Quit Claude</strong>, then reopen',
+          'On Windows: right-click the Claude icon in the system tray → <strong>Quit</strong>, then reopen'
         ]
       },
       {
@@ -394,9 +394,9 @@ const ALL_STEPS = [
         ]
       }
     ],
-    command: 'npx @anthropic-ai/desktop-commander setup',
+    command: 'npx @wonderwhy-er/desktop-commander setup',
     hasCopyBtn: true, links: [],
-    tip: 'If the setup command doesn\'t work, you can also install manually: run <code>npm install -g @anthropic-ai/desktop-commander</code>, then open Claude Desktop → Settings → Developer → Edit Config, and add the server to your config file.',
+    tip: 'If the setup command doesn\'t work, you can also install manually: run <code>npm install -g @wonderwhy-er/desktop-commander</code>, then open Claude Desktop → Settings → Developer → Edit Config, and add the server to your config file.',
     warn: null
   }
 
