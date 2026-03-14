@@ -172,9 +172,10 @@ const ALL_STEPS = [
     os: 'both', windowsOnly: false, required: false, optional: false,
     explanation: 'Enable Memory so Claude can remember your preferences, stack, and context across separate conversations.',
     bullets: [
-      'Go to <strong>Settings → Memory</strong>',
-      'Toggle <strong>Memory on</strong>',
-      'Optionally add a note about your preferred language or tech stack',
+      'Go to <strong>Settings → Capabilities</strong>',
+      'Click on <strong>Memory</strong> to expand it',
+      'Toggle on <strong>"Search and reference chat"</strong>',
+      'Toggle on <strong>"Generate from chat history"</strong>',
       'Claude will use this context to give more relevant answers over time'
     ],
     osSpecific: null, subSections: null, command: null, hasCopyBtn: false, links: [],
@@ -184,50 +185,14 @@ const ALL_STEPS = [
 
   /* ── 7 ─────────────────────────────────────────────────────── */
   {
-    id: 7,
-    title: 'Enable Run on startup and Quick access',
-    shortTitle: 'Startup & Quick access',
-    os: 'both', windowsOnly: false, required: false, optional: false,
-    explanation: 'Keep Claude instantly available by running it at startup and setting up a global keyboard shortcut.',
-    bullets: [
-      'Open <strong>Settings → General</strong>',
-      'Enable <strong>"Run on startup"</strong> (or "Launch at login" on Mac)',
-      'Configure the <strong>Quick access</strong> shortcut'
-    ],
-    osSpecific: {
-      mac: {
-        heading: 'On Mac',
-        bullets: [
-          'Enable <strong>"Launch at login"</strong> in Settings → General',
-          'Claude will appear in your <strong>menu bar</strong> (top-right)',
-          'Quick Access shortcut: typically <kbd>Cmd+Shift+Space</kbd>',
-          'Open Claude instantly from any app without switching windows'
-        ]
-      },
-      windows: {
-        heading: 'On Windows',
-        bullets: [
-          'Enable <strong>"Run on startup"</strong> in Settings → General',
-          'Claude will appear in the <span data-tooltip="The small icons area at the bottom-right of your taskbar">system tray</span>',
-          'Right-click the tray icon to configure the Quick Access shortcut',
-          'Use the shortcut to open Claude from any app instantly'
-        ]
-      }
-    },
-    subSections: null, command: null, hasCopyBtn: false, links: [],
-    tip: null, warn: null
-  },
-
-  /* ── 8 ─────────────────────────────────────────────────────── */
-  {
     id: 8,
     title: 'Open the Code tab',
     shortTitle: 'Open Code tab',
     os: 'both', windowsOnly: false, required: false, optional: false,
     explanation: 'Claude Desktop includes a dedicated Code tab optimised for software development — better syntax awareness and file context.',
     bullets: [
-      'Look for the <strong>Code</strong> tab in the left sidebar or top navigation',
-      'Click it to switch to the developer-focused interface',
+      'At the top of Claude Desktop, you\'ll see three tabs: <strong>Chat</strong>, <strong>Cowork</strong>, and <strong>Code</strong>',
+      'Click the <strong>Code</strong> tab to switch to the developer-focused interface',
       'Explore the code-specific options and settings here',
       'This is where you\'ll spend most of your development time with Claude'
     ],
@@ -244,7 +209,7 @@ const ALL_STEPS = [
     os: 'windows', windowsOnly: true, required: false, optional: false,
     explanation: 'Git is required for version control on Windows. macOS users can skip this — Git comes pre-installed with Xcode Command Line Tools.',
     bullets: [
-      'Visit <strong>git-scm.com/download/win</strong>',
+      'Go to <strong><a href="https://git-scm.com/download/win" target="_blank">git-scm.com/download/win</a></strong> to download Git',
       'Download the latest <strong>Git for Windows</strong> installer',
       'Run the installer — the default settings are recommended',
       'Open <strong>Git Bash</strong> or PowerShell and run <code>git --version</code> to confirm'
