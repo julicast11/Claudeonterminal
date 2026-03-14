@@ -179,7 +179,7 @@ const ALL_STEPS = [
       'Claude will use this context to give more relevant answers over time'
     ],
     osSpecific: null, subSections: null, command: null, hasCopyBtn: false, links: [],
-    tip: 'Try adding: "I work in TypeScript with Next.js and deploy to Railway."',
+    tip: null,
     warn: null
   },
 
@@ -341,8 +341,8 @@ const ALL_STEPS = [
     explanation: 'Link your accounts so Claude can read from your Drive and interact with your GitHub repositories.',
     bullets: [
       'In Claude Desktop, go to <strong>Settings → Integrations</strong>',
-      'Click <strong>Connect Google Drive</strong> and complete the <span data-tooltip="OAuth lets you authorise an app without sharing your password">OAuth</span> flow',
-      'Click <strong>Connect GitHub</strong> and authorise Claude',
+      'Click <strong>Connect Google Drive</strong> and follow the sign-in prompts',
+      'Click <strong>Connect GitHub</strong> and follow the sign-in prompts',
       'Choose which repos and Drive folders to share with Claude'
     ],
     osSpecific: null, subSections: null, command: null, hasCopyBtn: false,
@@ -362,7 +362,7 @@ const ALL_STEPS = [
     os: 'both', windowsOnly: false, required: false, optional: true,
     explanation: 'desktop-commander is an <span data-tooltip="MCP (Model Context Protocol) servers extend Claude\'s capabilities by connecting it to external tools and services">MCP server</span> that gives Claude Desktop the ability to run terminal commands, manage files, and control your desktop. It connects Claude Desktop to your local system so it can execute commands on your behalf.',
     bullets: [
-      'Follow the two steps below in order',
+      'Follow the three steps below in order',
       'You will need your terminal open and Claude Desktop installed'
     ],
     osSpecific: null,
