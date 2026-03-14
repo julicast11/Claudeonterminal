@@ -22,7 +22,7 @@ const ALL_STEPS = [
     os: 'both', windowsOnly: false, required: false, optional: false,
     explanation: 'Head to Anthropic\'s official website and download the Claude Desktop application for your operating system.',
     bullets: [
-      'Visit <strong>claude.ai/download</strong> in your browser',
+      'Go to <strong><a href="https://claude.ai/download" target="_blank">claude.ai/download</a></strong> in your browser',
       'Click the download button for your operating system',
       'Save the installer file to your Downloads folder'
     ],
@@ -45,9 +45,9 @@ const ALL_STEPS = [
       mac: {
         heading: 'On Mac',
         bullets: [
-          'Open the downloaded <code>.dmg</code> file from Downloads',
+          'Open the downloaded <code>.dmg</code> file from your Downloads folder',
           'Drag <strong>Claude</strong> into the <strong>Applications</strong> folder',
-          'Launch Claude via <span data-tooltip="Press Cmd+Space to open Spotlight, then type the app name">Spotlight</span> or from Applications',
+          'Open Claude — press <kbd>Cmd+Space</kbd>, type <strong>Claude</strong>, and press <kbd>Enter</kbd>',
           'Sign in with your Anthropic account when prompted'
         ]
       },
@@ -247,12 +247,12 @@ const ALL_STEPS = [
     os: 'mac', windowsOnly: false, required: false, optional: false,
     explanation: 'Open the Terminal app — you\'ll use it to install and run Claude Code.',
     bullets: [
-      'Press <kbd>Cmd+Space</kbd> to open <span data-tooltip="macOS built-in search tool — press Cmd+Space to open it">Spotlight</span>',
-      'Type <strong>Terminal</strong> and press <kbd>Enter</kbd>',
-      'A command-line window will appear — keep it open for the next step'
+      'Press <kbd>Cmd+Space</kbd>, type <strong>Terminal</strong>, and press <kbd>Enter</kbd>',
+      'A black or white window with a blinking cursor will appear — this is your terminal',
+      'Keep it open — you\'ll paste a command here in the next step'
     ],
     osSpecific: null, subSections: null, command: null, hasCopyBtn: false, links: [],
-    tip: 'Keep your terminal open — you\'ll use it in the next step.',
+    tip: null,
     warn: null
   },
 
@@ -300,13 +300,12 @@ const ALL_STEPS = [
     title: 'Log in to Claude',
     shortTitle: 'Log in',
     os: 'both', windowsOnly: false, required: true, optional: false,
-    explanation: 'After installing, you need to log in with your Anthropic account. Claude Code supports Claude Pro, Max, Teams, Enterprise, and Console accounts.',
+    explanation: 'After installing, you need to log in with your Anthropic account so Claude Code can connect to your plan.',
     bullets: [
       'Run <code>claude</code> in your terminal',
-      'You will be prompted to log in — follow the browser-based authentication flow',
-      'Sign in with your Claude Pro, Max, Teams, Enterprise, or Console account',
-      'Your credentials are stored locally after first login — you won\'t need to log in again unless you switch accounts',
-      'To switch accounts later, use the <code>/login</code> command inside Claude Code'
+      'A browser window will open — sign in with the same Anthropic account you used in Claude Desktop',
+      'Once logged in, you\'ll be taken back to the terminal and Claude Code is ready to use',
+      'You only need to do this once — your login is saved for future sessions'
     ],
     osSpecific: null, subSections: null,
     command: 'claude',
