@@ -311,12 +311,11 @@ const ALL_STEPS = [
         command: 'curl -fsSL https://claude.ai/install.sh | bash'
       },
       windows: {
-        heading: 'On Windows — choose one method',
+        heading: 'On Windows',
         bullets: [
-          '<strong>PowerShell (recommended):</strong> copy the command below (requires <a href="https://git-scm.com/download/win" target="_blank">Git for Windows</a>)',
-          '<strong>CMD alternative:</strong> <code>curl -fsSL https://claude.ai/install.cmd -o install.cmd &amp;&amp; install.cmd &amp;&amp; del install.cmd</code>',
           'Open <strong>PowerShell</strong> — press <kbd>Win</kbd>, type <strong>PowerShell</strong>, press <kbd>Enter</kbd>',
-          'Right-click to paste, then press <kbd>Enter</kbd>'
+          'Paste the command below and press <kbd>Enter</kbd>',
+          'That\'s it! This installs Claude Code and sets it up to auto-update automatically'
         ],
         command: 'irm https://claude.ai/install.ps1 | iex'
       }
